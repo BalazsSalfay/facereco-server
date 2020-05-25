@@ -11,10 +11,8 @@ const profile = require("./controllers/profile");
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-corrugated-64860",
-    user: "postgres",
-    password: "admin",
-    database: "smartbrain",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
